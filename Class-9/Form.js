@@ -20,6 +20,26 @@ function submitForm(event) {
         }
     );
 
+    // Start Validation
+    // name field validation
+    if (rName == '') {
+        alert("Name can not be emty.");
+        return;
+    }
+    else if (rName.length <= 3) {
+        alert("Name must have at least 4 charecter");
+        return;
+    }
+// email field validation
+    const regEx= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(regEx.test(email)){
+
+    }
+    else{
+        alert("Not a valid email address");
+        return;
+    }
+    // End Validation
 
     let output = "Name: " + rName + "\n";
 
