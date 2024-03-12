@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Form Validation</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #68d794;
+            border-radius: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        div {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container p-5">
+        <form id="myForm">
+            <h4>Studen Registration Form</h4>
+            <label for="">Name</label> <br>
+            <input type="text" name="" id="name"> <br>
+
+            <label for="">Email</label> <br>
+            <input type="text" name="" id="email"> <br>
+
+            <label for="">Password</label> <br>
+            <input type="text" name="" id="password"> <br>
+
+            <label for="">Gender</label> <br>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Femal">Female <br>
+
+            <label for="">Hobby</label> <br>
+            <input type="checkbox" name="hobby" value="Runing"> Runing
+            <input type="checkbox" name="hobby" value="Shwiming"> Shwiming <br>
+
+            <label for="">Round</label> <br>
+            <select name="" id="round">
+                <option selected>Select one</option>
+                <option value="55">55</option>
+                <option value="59">59</option>
+            </select> <br>
+
+            <label for="">DOB</label> <br>
+            <input type="date" name="dob" id="dob"> <br>
+
+            <label for="">Address</label> <br>
+            <textarea name="" id="address" cols="21" rows="3"></textarea> <br>
+
+            <div> <input type="submit" value="submit" id="submit"></div>
+        </form>
+    </div>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="Form.js"></script>
+</body>
+
+</html>

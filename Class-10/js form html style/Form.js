@@ -1,111 +1,89 @@
 
 
 function submitForm(event) {
-
     event.preventDefault();
 
     let rName = document.getElementById('name').value;
     if (rName == "") {
-        alert("plz inter ur full name");
+        alert("Enter ur Full Name");
         return;
     }
-    else if (rName.length <= 4) {
-        alert("plz inter the 4 charactare");
+    else if (rName.length < 4) {
+        alert("Enter the min 4 characters");
         return;
+    }
 
-    }
+
 
     let email = document.getElementById('email').value;
-    const regEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (regEx.test(email)) {
+
     }
     else {
-        alert("Enter  the valide email address")
+        alert("Enter ur valid email address");
         return;
-    };
+    }
 
     let password = document.getElementById('password').value;
-
-    if (password.length < 6 || password.length >= 20) {
-        alert("plz inter the minimum 6 charactare");
+    if (password.length < 8 || password.length > 20) {
+        alert("Enter min 8 characters");
         return;
 
     }
 
     let gender = document.querySelector('input[name="gender"]:checked');
     if (gender == null) {
-        alert("plz inter ur sex");
+        alert("Enter ur gender");
         return;
 
     }
-
-
-
-
-    let education = document.querySelectorAll('input[name="education"]:checked');
-    if (education.length == 0) {
-        alert("plz inter ur education");
+    let hobby = document.querySelectorAll('input[name="hobby"]:checked');
+    if (hobby.length == 0) {
+        alert("Enter ur hobby");
         return;
-
     }
 
-    let educationValue = [];
-    for (let index = 0; index < education.length; index++) {
-        educationValue.push(education[index].value);
+    let hobbyValue = [];
+    for (let i = 0; i < hobby.length; i++) {
+        hobbyValue.push(hobby[i].value);
+
     }
-
-    // let hoobyValue = [];
-
-    // hobby.forEach(
-    //     function (hobby) {
-
-    //         hoobyValue.push(hobby.value);
-    //     }
-    // );
 
     let round = document.getElementById('round').value;
-
-    if (round == 'Select One') {
-        alert("plz inter ur round");
+    if (round == "Select one") {
+        alert("Enter ur round");
         return;
-
     }
 
-
-    let dob = document.getElementById("dob").value;
+    let dob = document.getElementById('dob').value;
     if (dob == "") {
-        alert("plz inter ur dob");
+        alert("Enter ur dob");
         return;
     }
-
-
-    let address = document.getElementById("address").value;
+    let address = document.getElementById('address').value;
     if (address == "") {
-        alert("plz inter ur address");
+        alert("Enter ur address");
         return;
     }
 
 
 
-    let output = "Name: " + rName + "\n";
-    output += "Email: " + email + "\n";
-    output += "Password: " + password + "\n";
-    output += "Gender: " + gender.value + "\n";
-    output += "Education: " + educationValue + "\n";
-    output += "Round: " + round + "\n";
-    output += "DoB: " + dob + "\n";
-    output += "Address: " + address + "\n";
-   
+    let output = "Name :" + rName + "\n";
+    output += "Email :" + email + "\n";
+    output += "Password :" + password + "\n";
+    output += "Gender :" + gender.value + "\n";
+    output += "Hobby :" + hobbyValue + "\n";
+    output += "Round :" + round + "\n";
+    output += "DOB :" + dob + "\n";
+    output += "Address :" + address + "\n";
+
+    let newWindrow = window.open("", ('_blank'));
+    newWindrow.document.write("<pre>" + output + "</pre>");
 
 
-    let newWindow = window.open("", '_blank');
-    newWindow.document.write("<pre>" + output + "</pre>");
 }
 
 let myForm = document.getElementById('myForm');
 myForm.addEventListener('submit', submitForm);
-
-
-
-
 
