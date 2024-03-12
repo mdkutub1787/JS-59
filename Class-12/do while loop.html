@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price and Discount Calculator</title>
+   
+</head>
+
+<body>
+
+    <script>
+        function calculate() {
+            let price = parseInt(document.getElementById("price").value);
+            let discount = parseInt(document.getElementById("discount").value);
+
+            if (isNaN(price) || isNaN(discount)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+
+            var discountedPrice = price - (price * (discount / 100));
+
+            document.getElementById("result").innerHTML = "Discounted Price: $" + discountedPrice.toFixed(2);
+        }
+
+    </script>
+
+   
+</body>
+
+</html>
